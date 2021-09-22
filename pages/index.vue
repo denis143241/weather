@@ -5,21 +5,21 @@
     <div class="city">{{getCity}}</div>
     <div class="content-card">
       <div class="today">
-      <div class="date">Ср, 15 сентября, 16:27</div>
-      <div class="temp-img-description">
-        <div class="temp">{{formatTemp(nowTemp)}}</div>
-        <img src="sun.png" alt="" class="pad">
-        <p class="description-weather pad">{{getWeatherDescriptions}}</p>
-      </div>
-      <more-info :feelsLike="formatTemp(feelsLike)" 
+        <div class="date">Ср, 15 сентября, 16:27</div>
+        <div class="temp-img-description">
+          <div class="temp">{{formatTemp(nowTemp)}}</div>
+          <img src="sun.png" alt="" class="pad">
+          <p class="description-weather pad">{{getWeatherDescriptions}}</p>
+        </div>
+        <more-info :feelsLike="formatTemp(feelsLike)" 
                   :windSpeed="windSpeed" 
                   :windDeg="formatWind(windDeg)" 
                   :pressure="pressure" 
                   :humidity="humidity"
                   :rain="rain"
                   
-      /> 
-    </div>
+        /> 
+      </div>
     <div class="temp_wind">
         <div class="hour-forecast-top">
             <temps-and-winds v-for="index in 5" :key="index" 
@@ -28,18 +28,12 @@
             />
         </div>
         <div class="wind-title">Скорость ветра, м/с</div>
-      <div class="wind_speed">
-        <div class="speed-block" id="parallelogram" v-for="(speed, index) in forecastSpeeds" :key="index">{{speed}}</div>
-      </div>
+        <div class="wind_speed">
+          <div class="speed-block" id="parallelogram" v-for="(speed, index) in forecastSpeeds" :key="index">{{speed}}</div>
+        </div>
     </div>
     </div>
-    <!-- <div class="choose-day">
-      <div @click="showToday" :class="{'activeTab': $store.state.day.today}" class="day-link former contentIn-center">Сегодня</div>
-      <div @click="showTomorrow" :class="{'activeTab': !$store.state.day.today}" class="day-link latter contentIn-center">Завтра</div>
-    </div> -->
   </div>
-  <!-- </div>
-</div> -->
 </template>
 
 <script>

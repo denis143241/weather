@@ -23,6 +23,7 @@ export default {
             this.$store.commit('day/changeFlag', true)
         },
         showTomorrow() {
+            if (this.$store.state.tomorrow.speeds.length === 0) this.$store.commit('writeTomorrowData')
             this.$router.push('/tomorrow')
             this.$store.commit('day/changeFlag', false)
         },
