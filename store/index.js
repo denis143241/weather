@@ -9,7 +9,7 @@ export const mutations = {
 }
 
 export const actions = {
-    async fetch({commit}, city="Madrid") {
+    async fetch({commit}, city="Vladimir") {
         // const data = await this.$axios.$get(`https://api.openweathermap.org/data/2.5/weather?q=${сity}&lang=ru&appid=b14f3c358e9c09d365937537521eeffa`)
         const data = await this.$axios.$get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=ru&appid=b14f3c358e9c09d365937537521eeffa`)
         commit('setData', data)
@@ -79,6 +79,6 @@ export const getters = {
         return s.data.list[0].wind.deg
     },
     rain: s => {
-        return s.data.list[0].rain['3h'] * 100
+        return s.data.list[0].rain ? s.data.list[0].rain['3h'] * 100 : 'не ожидается'
     }
 }

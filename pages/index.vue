@@ -1,15 +1,7 @@
 <template>
   <div>
-    <div class="header">
-  <div class="title">Title</div>
-  <ul>
-    <li>Title</li>
-    <li>Title</li>
-    <li>Title</li>
-  </ul>
-</div>
-<div class="weather-layout">
-  <div class="weather-card">
+<!-- <div class="weather-layout">
+  <div class="weather-card"> -->
     <div class="city">{{getCity}}</div>
     <div class="content-card">
       <div class="today">
@@ -23,7 +15,8 @@
                   :windSpeed="windSpeed" 
                   :windDeg="formatWind(windDeg)" 
                   :pressure="pressure" 
-                  :humidity="humidity" 
+                  :humidity="humidity"
+                  :rain="rain"
                   
       /> 
     </div>
@@ -40,13 +33,13 @@
       </div>
     </div>
     </div>
-    <div class="choose-day">
+    <!-- <div class="choose-day">
       <div @click="showToday" :class="{'activeTab': $store.state.day.today}" class="day-link former contentIn-center">Сегодня</div>
       <div @click="showTomorrow" :class="{'activeTab': !$store.state.day.today}" class="day-link latter contentIn-center">Завтра</div>
-    </div>
+    </div> -->
   </div>
-</div>
-  </div>
+  <!-- </div>
+</div> -->
 </template>
 
 <script>
@@ -68,14 +61,14 @@ export default {
     }
   },
   methods: {
-    showToday() {
-      this.$router.push('/')
-      this.$store.commit('day/changeFlag', true)
-    },
-    showTomorrow() {
-      this.$router.push('/tomorrow')
-      this.$store.commit('day/changeFlag', false)
-    },
+    // showToday() {
+    //   this.$router.push('/')
+    //   this.$store.commit('day/changeFlag', true)
+    // },
+    // showTomorrow() {
+    //   this.$router.push('/tomorrow')
+    //   this.$store.commit('day/changeFlag', false)
+    // },
     showDescriptions() {
       this.showMore = !this.showMore
     },
