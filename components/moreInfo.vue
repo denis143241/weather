@@ -18,7 +18,7 @@
         </div>
         <div class="row rain">
           <div class="description info-margin rain">Дождь в ближайшие 3 часа</div>
-          <div class="description-value info-margin">{{rain}}%</div>
+          <div class="description-value info-margin">{{rain}}</div>
         </div>
         <div class="row">
           <div class="description info-margin">Температура воды</div>
