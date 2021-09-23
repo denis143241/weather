@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <Navigation />
-        <div class="weather-layout">
+        <div class="weather-layout montly-card">
             <div class="weather-card">
                 <div class="flex-wrapper">
                     <nuxt />

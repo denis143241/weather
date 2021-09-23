@@ -1,14 +1,12 @@
 <template>
   <div>
-<!-- <div class="weather-layout">
-  <div class="weather-card"> -->
     <div class="city">{{getCity}}</div>
     <div class="content-card">
       <div class="today">
-        <div class="date">Ср, 15 сентября, 16:27</div>
+        <div class="date">{{dateNow}}</div>
         <div class="temp-img-description">
           <div class="temp">{{formatTemp(nowTemp)}}</div>
-          <img src="sun.png" alt="" class="pad">
+          <img :src="setPicture" alt="" class="pad">
           <p class="description-weather pad">{{getWeatherDescriptions}}</p>
         </div>
         <more-info :feelsLike="formatTemp(feelsLike)" 
@@ -24,7 +22,8 @@
         <div class="hour-forecast-top">
             <temps-and-winds v-for="index in 5" :key="index" 
                   :date="formatDate(forecastDates[index-1])" 
-                  :temp="formatTemp(forecastTemps[index-1])"  
+                  :temp="formatTemp(forecastTemps[index-1])" 
+                  :img="setForecastPicture(index)"
             />
         </div>
         <div class="wind-title">Скорость ветра, м/с</div>
@@ -50,19 +49,10 @@ export default {
   },
   data() {
     return {
-      degrees: ['С', 'СВ', 'В', 'ЮВ', 'Ю', 'ЮЗ', 'З', 'СЗ'],
       showMore: false
     }
   },
   methods: {
-    // showToday() {
-    //   this.$router.push('/')
-    //   this.$store.commit('day/changeFlag', true)
-    // },
-    // showTomorrow() {
-    //   this.$router.push('/tomorrow')
-    //   this.$store.commit('day/changeFlag', false)
-    // },
     showDescriptions() {
       this.showMore = !this.showMore
     },
@@ -74,11 +64,14 @@ export default {
     formatWind(deg) {
       let cell = Math.round(deg / 45)
       if (cell >= 8) cell = 0
-      return this.degrees[cell]
+      return this.$store.state.degree.degrees[cell]
     },
     formatDate(date) {
       return date.split(' ')[1].split(':').splice(0, 2).join(':')
     },
+    setForecastPicture(index) {
+      return `${this.$store.state.data.list[index].weather[0].main}.png`
+    }
   },
   computed: {
     ...mapGetters([
@@ -94,6 +87,20 @@ export default {
       },
       forecastSpeeds() {
         return this.forecastData.speeds
+      },
+      setPicture() {
+        return `${this.$store.state.data.list[0].weather[0].main}.png`
+      },
+      dateNow() {
+        var options = {
+          month: 'long',
+          day: 'numeric',
+          weekday: 'short',
+          timezone: 'UTC',
+          hour: 'numeric',
+          minute: 'numeric',
+        };
+        return new Date().toLocaleString('ru', options)
       }
   }
   

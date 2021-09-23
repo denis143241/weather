@@ -1,3 +1,5 @@
-// export default function() {
-//     if ($store.state.data === 0)
-// }
+export default function({store, redirect}) {
+    if (store.state.data.length === 0) {
+        return redirect('/')
+    }
+}

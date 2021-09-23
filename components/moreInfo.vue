@@ -6,15 +6,15 @@
         </div>
         <div class="row">
           <div class="description info-margin">Ветер</div>
-          <div class="description-value info-margin">{{windSpeed}}, {{windDeg}}</div>
+          <div class="description-value info-margin">{{windSpeed}} м/с, {{windDeg}}</div>
         </div>
         <div class="row">
           <div class="description info-margin">Давление</div>
-          <div class="description-value info-margin">{{pressure}}</div>
+          <div class="description-value info-margin">{{pressure}} мм рт. ст.</div>
         </div>
         <div class="row">
           <div class="description info-margin">Влажность</div>
-          <div class="description-value info-margin">{{humidity}}</div>
+          <div class="description-value info-margin">{{humidity}}%</div>
         </div>
         <div class="row rain">
           <div class="description info-margin rain">Дождь в ближайшие 3 часа</div>
