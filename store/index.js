@@ -35,8 +35,8 @@ export const actions = {
         const data = await this.$axios.$get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=ru&appid=b14f3c358e9c09d365937537521eeffa`)
         commit('setData', data)
     },
-    async fetchLocal({commit}, lat, lon) {
-        const data = await this.$axios.$get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=b14f3c358e9c09d365937537521eeffa`)
+    async fetchLocal({commit}, arr) {
+        const data = await this.$axios.$get(`https://api.openweathermap.org/data/2.5/forecast?lat=${arr[0]}&lon=${arr[1]}&lang=ru&appid=b14f3c358e9c09d365937537521eeffa`)
         commit('setData', data)
     }
 }

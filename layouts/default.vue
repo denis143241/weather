@@ -17,18 +17,18 @@
 import Navigation from '@/components/navigation.vue'
 export default {
     components: {Navigation},
-    mounted() {
-        this.$refs.mainbg.style.background = `url(${this.$store.state.data.list[0].weather[0].main}.jpg)`
-        console.log(this.$refs.mainbg)
-        console.log(`url(${this.$store.state.data.list[0].weather[0].main}.jpg)`)
-    },
+    // mounted() {
+    //     this.$refs.mainbg.style.background = `url(${this.$store.state.data.list[0].weather[0].main}.jpg)`
+    //     console.log(this.$refs.mainbg)
+    //     console.log(`url(${this.$store.state.data.list[0].weather[0].main}.jpg)`)
+    // },
     methods: {
         showToday() {
             this.$router.push('/')
             this.$store.commit('day/changeFlag', true)
         },
         showTomorrow() {
-            if (this.$store.state.tomorrow.speeds.length === 0) this.$store.commit('writeTomorrowData')
+            this.$store.commit('writeTomorrowData')
             this.$router.push('/tomorrow')
             this.$store.commit('day/changeFlag', false)
         },
