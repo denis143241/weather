@@ -10,6 +10,10 @@
   .header a {
     text-decoration: none;
     color: black;
+    transition: .2s;
+  }
+  .header a:hover {
+    color: #004d96;
   }
   .container {
     width: 1203px;

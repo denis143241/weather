@@ -21,6 +21,7 @@ export const mutations = {
         state.tomorrow.pressure = Math.floor(state.data.list[8].main.pressure / 1.333)
         state.tomorrow.humidity = state.data.list[8].main.humidity
         state.tomorrow.rain = state.data.list[8].rain ? `${state.data.list[8].rain['3h'] * 100}%` : 'не ожидается'
+        state.tomorrow.dates, state.tomorrow.temps, state.tomorrow.speeds = []
         for (let i = 9; i < 14; i++) {
             state.tomorrow.dates.push(state.data.list[i].dt_txt)
             state.tomorrow.temps.push(Math.round(state.data.list[i].main.temp - 273.15))

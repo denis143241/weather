@@ -15,6 +15,7 @@
                   :pressure="pressure" 
                   :humidity="humidity"
                   :rain="rain"
+                  :maxWind="Math.round($store.state.data.list[0].wind.gust)"
                   
         /> 
       </div>

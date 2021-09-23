@@ -21,15 +21,15 @@
           <div class="description-value info-margin">{{rain}}</div>
         </div>
         <div class="row">
-          <div class="description info-margin">Температура воды</div>
-          <div class="description-value info-margin">+12,8</div>
+          <div class="description info-margin">Порывы ветра до</div>
+          <div class="description-value info-margin">{{maxWind}} м/с</div>
         </div>
       </div>
 </template>
 
 <script>
 export default {
-    props: ["feelsLike", "windSpeed", "windDeg", "pressure", "humidity", "rain"],
+    props: ["feelsLike", "windSpeed", "windDeg", "pressure", "humidity", "rain", "maxWind"],
     data() {
         return {
             degrees: ['С', 'СВ', 'В', 'ЮВ', 'Ю', 'ЮЗ', 'З', 'СЗ'],

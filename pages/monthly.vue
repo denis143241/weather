@@ -14,6 +14,7 @@
 import monthCard from '@/components/monthCard.vue'
 export default {
     layout: 'month',
+    middleware: 'loaded',
     components: {monthCard},
     methods: {
         formatDate_WDM(date) {

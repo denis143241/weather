@@ -14,14 +14,15 @@
                             :windDeg="formatWind($store.state.tomorrow.deg)"
                             :pressure="$store.state.tomorrow.pressure"
                             :humidity="$store.state.tomorrow.humidity"
-                            :rain="$store.state.tomorrow.rain" 
+                            :rain="$store.state.tomorrow.rain"
+                            :maxWind="Math.round($store.state.data.list[8].wind.gust)"
                 />
                 </div>
             <div class="temp_wind">
                 <div class="hour-forecast-top">
                     <temps-and-winds v-for="index in 5" :key="index" 
                         :date="formatDate($store.state.tomorrow.dates[index - 1])"
-                        :temp="formatTemp($store.state.tomorrow.temps[index - 1])" 
+                        :temp="formatTemp(Math.round($store.state.data.list[7 + index].main.temp - 273.15))" 
                         :img="setForecastPicture(index)"
                     />
                 </div>
