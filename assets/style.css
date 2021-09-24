@@ -50,7 +50,7 @@ input:focus {
   }
   .weather-card {
     z-index: 2;
-    background: #fff;
+    background: rgba(255, 255, 255, .9);
     border: 1px solid black;
     width: 90%;
     height: 90%;
