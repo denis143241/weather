@@ -1,11 +1,9 @@
 <template>
     <form @submit.prevent="submit">
-        <div class="flex-box">
-            <div class="inputCity">
-                <h4>Сменить город</h4>
-                <input type="text" class="input-text" placeholder="Введите город" v-model="city" required :disabled="geo">
-            </div>
-            <div class="geo">
+        <div class="wrapper-form">
+            <div class="form-title">Сменить город</div>
+            <input type="text" class="input-text" placeholder="Введите город/страну" v-model="city" required :disabled="geo">
+            <div class="checkbox">
                 <label for="api">По местоположению</label>
                 <input type="checkbox" v-model="geo" class="checkbox">
             </div>
@@ -67,8 +65,11 @@ export default {
         align-items: center;
         flex-direction: column;
     }
-    .input-text {
-        padding: 10px 15px;
+    .form-title {
+        font-size: 25px;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 50px;
     }
     .flex-box {
         display: flex;
@@ -79,14 +80,42 @@ export default {
         padding: 20px;
     }
     button {
-        flex-grow: 1;
+        margin: 50px 0 20px;
+        width: 100%;
         background-color: blue;
+        box-shadow: 0 0 7px rgba(97, 97, 252, .5);
         border: none;
-        padding: 8px 13px;
+        padding: 10px 15px;
         border-radius: 10px;
         color: #fff;
+        transition: .2s;
     }
     button:hover {
         cursor: pointer;
+        box-shadow: none;
+    }
+    .wrapper-form {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .input-text {
+        padding: 15px 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+        border:none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+        transition: .2s;
+    }
+    .input-text:focus {
+        box-shadow: 0 0 1px rgba(0, 0, 0, .1);;
+    }
+    input {
+        margin: 10px 0;
+    }
+    .checkbox {
+        vertical-align: middle;
+        margin: 0 8px;
     }
 </style>

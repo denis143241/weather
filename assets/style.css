@@ -1,3 +1,6 @@
+input:focus {
+  outline: none;
+}
 .header {
     margin: 30px 0 10px;
     display: flex;
@@ -34,7 +37,8 @@
     font-weight: 500;
   }
   .weather-layout {
-    background: url('@/static/Clear.jpg') no-repeat center center;
+    background: url('@/static/nat2.jpg') no-repeat center center;
+    background-size: 100%;
     border: 10px solid #F2F4F4;
     border-radius: 20px;
     width: 100%;
@@ -198,7 +202,5 @@
   background: #004d96;
 }
 .montly-card {
-  min-height: 0 !important;
-  height: 160px !important;
-  padding: 215px 0 !important;
+  height: 144px;
 }

@@ -17,11 +17,11 @@
 import Navigation from '@/components/navigation.vue'
 export default {
     components: {Navigation},
-    // mounted() {
-    //     this.$refs.mainbg.style.background = `url(${this.$store.state.data.list[0].weather[0].main}.jpg)`
-    //     console.log(this.$refs.mainbg)
-    //     console.log(`url(${this.$store.state.data.list[0].weather[0].main}.jpg)`)
-    // },
+    data() {
+        return {
+            img: true
+        }
+    },
     methods: {
         showToday() {
             this.$router.push('/')

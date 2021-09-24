@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <Navigation />
-        <div class="weather-layout montly-card">
-            <div class="weather-card">
+        <div class="weather-layout">
+            <div class="weather-card montly-card" :class="{'form-card': $nuxt.$route.name === 'formCity'}">
                 <div class="flex-wrapper">
                     <nuxt />
                 </div>
@@ -43,5 +43,12 @@ export default {
     }
     .weather-card {
         border: none;
+    }
+    .form-card {
+        width: 50%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
