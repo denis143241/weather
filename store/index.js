@@ -105,6 +105,6 @@ export const getters = {
         return s.data.list[0].wind.deg
     },
     rain: s => {
-        return s.data.list[0].rain ? `${s.data.list[0].rain['3h'] * 100}%` : 'не ожидается'
+        return s.data.list[0].rain ? s.data.list[0].rain['3h'] * 100 : 'не ожидается'
     }
 }
