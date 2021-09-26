@@ -105,10 +105,7 @@ export const getters = {
         return s.data.list[0].wind.deg
     },
     rain: s => {
-<<<<<<< HEAD
         return s.data.list[0].rain ? s.data.list[0].rain['3h'] * 100 : 'не ожидается'
-=======
         return s.data.list[0].rain ? `${s.data.list[0].rain['3h'] * 100}%` : 'не ожидается'
->>>>>>> mergeBranch
     }
 }

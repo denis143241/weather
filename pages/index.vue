@@ -1,10 +1,5 @@
 <template>
   <div>
-<<<<<<< HEAD
-<!-- <div class="weather-layout">
-  <div class="weather-card"> -->
-=======
->>>>>>> mergeBranch
     <div class="city">{{getCity}}</div>
     <div class="content-card">
       <div class="today">
@@ -20,10 +15,7 @@
                   :pressure="pressure" 
                   :humidity="humidity"
                   :rain="rain"
-<<<<<<< HEAD
-=======
                   :maxWind="Math.round($store.state.data.list[0].wind.gust)"
->>>>>>> mergeBranch
                   
         /> 
       </div>
@@ -40,18 +32,8 @@
           <div class="speed-block" id="parallelogram" v-for="(speed, index) in forecastSpeeds" :key="index">{{speed}}</div>
         </div>
     </div>
-<<<<<<< HEAD
-    <!-- <div class="choose-day">
-      <div @click="showToday" :class="{'activeTab': $store.state.day.today}" class="day-link former contentIn-center">Сегодня</div>
-      <div @click="showTomorrow" :class="{'activeTab': !$store.state.day.today}" class="day-link latter contentIn-center">Завтра</div>
-    </div> -->
-  </div>
-  <!-- </div>
-</div> -->
-=======
     </div>
   </div>
->>>>>>> mergeBranch
 </template>
 
 <script>
@@ -72,17 +54,6 @@ export default {
     }
   },
   methods: {
-<<<<<<< HEAD
-    // showToday() {
-    //   this.$router.push('/')
-    //   this.$store.commit('day/changeFlag', true)
-    // },
-    // showTomorrow() {
-    //   this.$router.push('/tomorrow')
-    //   this.$store.commit('day/changeFlag', false)
-    // },
-=======
->>>>>>> mergeBranch
     showDescriptions() {
       this.showMore = !this.showMore
     },
