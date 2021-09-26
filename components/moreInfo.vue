@@ -6,30 +6,30 @@
         </div>
         <div class="row">
           <div class="description info-margin">Ветер</div>
-          <div class="description-value info-margin">{{windSpeed}}, {{windDeg}}</div>
+          <div class="description-value info-margin">{{windSpeed}} м/с, {{windDeg}}</div>
         </div>
         <div class="row">
           <div class="description info-margin">Давление</div>
-          <div class="description-value info-margin">{{pressure}}</div>
+          <div class="description-value info-margin">{{pressure}} мм рт. ст.</div>
         </div>
         <div class="row">
           <div class="description info-margin">Влажность</div>
-          <div class="description-value info-margin">{{humidity}}</div>
+          <div class="description-value info-margin">{{humidity}}%</div>
         </div>
         <div class="row rain">
           <div class="description info-margin rain">Дождь в ближайшие 3 часа</div>
           <div class="description-value info-margin">{{rain}}</div>
         </div>
         <div class="row">
-          <div class="description info-margin">Температура воды</div>
-          <div class="description-value info-margin">+12,8</div>
+          <div class="description info-margin">Порывы ветра до</div>
+          <div class="description-value info-margin">{{maxWind}} м/с</div>
         </div>
       </div>
 </template>
 
 <script>
 export default {
-    props: ["feelsLike", "windSpeed", "windDeg", "pressure", "humidity", "rain"],
+    props: ["feelsLike", "windSpeed", "windDeg", "pressure", "humidity", "rain", "maxWind"],
     data() {
         return {
             degrees: ['С', 'СВ', 'В', 'ЮВ', 'Ю', 'ЮЗ', 'З', 'СЗ'],

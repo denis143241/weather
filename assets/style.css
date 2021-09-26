@@ -1,7 +1,26 @@
+input:focus {
+  outline: none;
+}
 .header {
+    margin: 30px 0 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .activeA {
+    color: #004d96 !important;
+  }
+  .header a {
+    text-decoration: none;
+    color: black;
+    transition: .2s;
+  }
+  .header a:hover {
+    color: #004d96;
+  }
+  .container {
+    width: 1203px;
+    margin: 0 auto;
   }
   ul {
     display: flex;
@@ -14,13 +33,16 @@
   }
   .title {
     margin-right: 30px;
-    font-size: 24px;
+    font-size: 30px;
+    font-weight: 500;
   }
   .weather-layout {
-    background: url('https://cdn.pixabay.com/photo/2018/06/18/23/03/europe-3483539_960_720.jpg');
-    border: 10px solid #aeaeae;
-    width: 80%;
-    height: 570px;
+    background: url('@/static/nat2.jpg') no-repeat center center;
+    background-size: 100%;
+    border: 10px solid #F2F4F4;
+    border-radius: 20px;
+    width: 100%;
+    height: 570px !important;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -28,9 +50,9 @@
   }
   .weather-card {
     z-index: 2;
-    background: #fff;
+    background: rgba(255, 255, 255, .9);
     border: 1px solid black;
-    width: 95%;
+    width: 90%;
     height: 90%;
     border-radius: 8px;
   }
@@ -54,6 +76,8 @@
   .temp-img-description {
     display: flex;
     margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
   }
   img {
     width: 70px;
@@ -66,7 +90,7 @@
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    background: lightgreen;
+    background: rgb(127, 233, 127);
     border-bottom: 2px solid green
   }
   .pad {
@@ -106,6 +130,7 @@
     justify-content: center;
   }
   .former {
+    border-radius: 0 0 0 10px;
     width: 40%;
   }
   .latter {
@@ -116,7 +141,7 @@
     position: absolute;
     width: 100%;
     height: 1px;
-    background: #adadad;
+    background: #E5E8E8;
     top: 77%;
   }
   .hour-forecast-top {
@@ -175,4 +200,7 @@
 }
 .activeTab {
   background: #004d96;
+}
+.montly-card {
+  height: 144px;
 }

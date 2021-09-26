@@ -1,38 +1,46 @@
 <template>
   <div>
+<<<<<<< HEAD
 <!-- <div class="weather-layout">
   <div class="weather-card"> -->
+=======
+>>>>>>> mergeBranch
     <div class="city">{{getCity}}</div>
     <div class="content-card">
       <div class="today">
-      <div class="date">Ср, 15 сентября, 16:27</div>
-      <div class="temp-img-description">
-        <div class="temp">{{formatTemp(nowTemp)}}</div>
-        <img src="sun.png" alt="" class="pad">
-        <p class="description-weather pad">{{getWeatherDescriptions}}</p>
-      </div>
-      <more-info :feelsLike="formatTemp(feelsLike)" 
+        <div class="date">{{dateNow}}</div>
+        <div class="temp-img-description">
+          <div class="temp">{{formatTemp(nowTemp)}}</div>
+          <img :src="setPicture" alt="" class="pad">
+          <p class="description-weather pad">{{getWeatherDescriptions}}</p>
+        </div>
+        <more-info :feelsLike="formatTemp(feelsLike)" 
                   :windSpeed="windSpeed" 
                   :windDeg="formatWind(windDeg)" 
                   :pressure="pressure" 
                   :humidity="humidity"
                   :rain="rain"
+<<<<<<< HEAD
+=======
+                  :maxWind="Math.round($store.state.data.list[0].wind.gust)"
+>>>>>>> mergeBranch
                   
-      /> 
-    </div>
+        /> 
+      </div>
     <div class="temp_wind">
         <div class="hour-forecast-top">
             <temps-and-winds v-for="index in 5" :key="index" 
                   :date="formatDate(forecastDates[index-1])" 
-                  :temp="formatTemp(forecastTemps[index-1])"  
+                  :temp="formatTemp(forecastTemps[index-1])" 
+                  :img="setForecastPicture(index)"
             />
         </div>
         <div class="wind-title">Скорость ветра, м/с</div>
-      <div class="wind_speed">
-        <div class="speed-block" id="parallelogram" v-for="(speed, index) in forecastSpeeds" :key="index">{{speed}}</div>
-      </div>
+        <div class="wind_speed">
+          <div class="speed-block" id="parallelogram" v-for="(speed, index) in forecastSpeeds" :key="index">{{speed}}</div>
+        </div>
     </div>
-    </div>
+<<<<<<< HEAD
     <!-- <div class="choose-day">
       <div @click="showToday" :class="{'activeTab': $store.state.day.today}" class="day-link former contentIn-center">Сегодня</div>
       <div @click="showTomorrow" :class="{'activeTab': !$store.state.day.today}" class="day-link latter contentIn-center">Завтра</div>
@@ -40,6 +48,10 @@
   </div>
   <!-- </div>
 </div> -->
+=======
+    </div>
+  </div>
+>>>>>>> mergeBranch
 </template>
 
 <script>
@@ -56,11 +68,11 @@ export default {
   },
   data() {
     return {
-      degrees: ['С', 'СВ', 'В', 'ЮВ', 'Ю', 'ЮЗ', 'З', 'СЗ'],
       showMore: false
     }
   },
   methods: {
+<<<<<<< HEAD
     // showToday() {
     //   this.$router.push('/')
     //   this.$store.commit('day/changeFlag', true)
@@ -69,6 +81,8 @@ export default {
     //   this.$router.push('/tomorrow')
     //   this.$store.commit('day/changeFlag', false)
     // },
+=======
+>>>>>>> mergeBranch
     showDescriptions() {
       this.showMore = !this.showMore
     },
@@ -80,11 +94,14 @@ export default {
     formatWind(deg) {
       let cell = Math.round(deg / 45)
       if (cell >= 8) cell = 0
-      return this.degrees[cell]
+      return this.$store.state.degree.degrees[cell]
     },
     formatDate(date) {
       return date.split(' ')[1].split(':').splice(0, 2).join(':')
     },
+    setForecastPicture(index) {
+      return `${this.$store.state.data.list[index].weather[0].main}.png`
+    }
   },
   computed: {
     ...mapGetters([
@@ -100,6 +117,20 @@ export default {
       },
       forecastSpeeds() {
         return this.forecastData.speeds
+      },
+      setPicture() {
+        return `${this.$store.state.data.list[0].weather[0].main}.png`
+      },
+      dateNow() {
+        var options = {
+          month: 'long',
+          day: 'numeric',
+          weekday: 'short',
+          timezone: 'UTC',
+          hour: 'numeric',
+          minute: 'numeric',
+        };
+        return new Date().toLocaleString('ru', options)
       }
   }
   

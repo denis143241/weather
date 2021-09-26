@@ -1,7 +1,11 @@
 <template>
     <div class="container">
         <Navigation />
+<<<<<<< HEAD
         <div class="weather-layout">
+=======
+        <div class="weather-layout" ref="mainbg">
+>>>>>>> mergeBranch
             <div class="weather-card">
                 <nuxt />
                 <div class="choose-day">
@@ -17,12 +21,24 @@
 import Navigation from '@/components/navigation.vue'
 export default {
     components: {Navigation},
+<<<<<<< HEAD
+=======
+    data() {
+        return {
+            img: true
+        }
+    },
+>>>>>>> mergeBranch
     methods: {
         showToday() {
             this.$router.push('/')
             this.$store.commit('day/changeFlag', true)
         },
         showTomorrow() {
+<<<<<<< HEAD
+=======
+            this.$store.commit('writeTomorrowData')
+>>>>>>> mergeBranch
             this.$router.push('/tomorrow')
             this.$store.commit('day/changeFlag', false)
         },
